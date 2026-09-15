@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Dr. Nagakumari — 27 years in Naturopathy, Nutrition and Yogic Sciences. Healing, nurturing, uplifting. Helping you create healthy homes.">
+<title>Dr. Nagakumari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --oat:#F2EFE7;
+  --cream:#FBF8F1;
+  --bark:#1C2318;
+  --bark-2:#262E20;
+  --amber:#C8871F;
+  --amber-lift:#DCA03A;
+  --amber-soft:#F3E6CD;
+  --ink:#1F2419;
+  --muted:#6B7263;
+  --line:#E2DED2;
+  --line-dark:rgba(242,239,231,.16);
+
+  --display:"Outfit","Helvetica Neue",Arial,sans-serif;
+  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
+  --maxw:1200px;
+  --pad:clamp(94px,11vw,168px);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--oat);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:6px}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:28px}
+.sec{padding-block:var(--pad)}
+.sec-cream{background:var(--cream)}
+.sec-dark{background:var(--bark);color:#EDEBE2}
+
+h1,h2,h3,h4{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.022em;font-weight:600}
+h1{font-size:clamp(2.7rem,6.4vw,5rem);line-height:1.02;font-weight:700}
+h2{font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.06}
+h3{font-size:clamp(1.15rem,1.6vw,1.35rem);line-height:1.25;letter-spacing:-.012em}
+p{margin:0}
+.lead{font-size:clamp(1.08rem,1.5vw,1.26rem);line-height:1.66;color:var(--muted)}
+.eyebrow{font-family:var(--body);font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);display:block}
+.sec-dark .eyebrow{color:var(--amber-lift)}
+.sec-dark .lead{color:rgba(237,235,226,.7)}
+section{scroll-margin-top:78px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--body);font-size:15px;font-weight:600;padding:15px 30px;border-radius:999px;text-decoration:none;border:1.5px solid transparent;transition:transform .2s cubic-bezier(.2,.8,.3,1),background .22s,color .22s,border-color .22s}
+.btn-amber{background:var(--amber);color:#211502}
+.btn-amber:hover{background:var(--amber-lift);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-onphoto{border-color:rgba(255,255,255,.45);color:#fff}
+.btn-onphoto:hover{background:#fff;color:var(--bark);transform:translateY(-2px)}
+.btn-sm{padding:11px 22px;font-size:14px}
+
+/* ---------- navbar: frosted, wordmark centred ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:80;background:transparent;border-bottom:1px solid transparent;transition:background .4s ease,border-color .4s ease}
+.nav.frosted{background:rgba(242,239,231,.82);backdrop-filter:saturate(1.5) blur(14px);border-bottom-color:var(--line)}
+.nav-in{position:relative;display:flex;align-items:center;height:76px;max-width:var(--maxw);margin-inline:auto;padding-inline:28px}
+.nav-left,.nav-right{display:flex;align-items:center;gap:26px;flex:1}
+.nav-right{justify-content:flex-end}
+.nav-left a{font-size:14.5px;font-weight:500;text-decoration:none;color:rgba(255,255,255,.86);transition:color .2s,opacity .2s}
+.nav-left a:hover{color:#fff}
+.nav.frosted .nav-left a{color:var(--muted)}
+.nav.frosted .nav-left a:hover{color:var(--ink)}
+.wordmark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;text-decoration:none;white-space:nowrap}
+.wordmark b{display:block;font-family:var(--display);font-weight:700;font-size:1.22rem;letter-spacing:-.02em;color:#fff;line-height:1}
+.wordmark span{display:block;font-size:9.5px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-top:5px}
+.nav.frosted .wordmark b{color:var(--ink)}
+.nav.frosted .wordmark span{color:var(--muted)}
+.nav .btn-nav{border:1.5px solid rgba(255,255,255,.45);color:#fff;background:transparent;padding:11px 22px;font-size:14px;font-weight:600;border-radius:999px;text-decoration:none;transition:background .22s,color .22s,border-color .22s}
+.nav .btn-nav:hover{background:#fff;color:var(--bark)}
+.nav.frosted .btn-nav{background:var(--amber);border-color:var(--amber);color:#211502}
+.nav.frosted .btn-nav:hover{background:var(--amber-lift);border-color:var(--amber-lift);color:#211502}
+@media (max-width:900px){
+  .nav-left{display:none}
+  .nav-right{flex:0 0 auto}
+  .nav-in{height:68px;gap:16px}
+  .wordmark{position:static;transform:none;text-align:left;margin-right:auto}
+  .wordmark b{font-size:1.1rem}
+}
+@media (max-width:560px){
+  .nav-long{display:none}
+  .wordmark b{font-size:1.02rem}
+  .wordmark span{letter-spacing:.22em;font-size:9px}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:clamp(620px,94vh,900px);display:grid;align-items:center;overflow:hidden;background:var(--bark)}
+.hero-photo{position:absolute;inset:-4%;z-index:0;background-color:#24401F;
+  background-image:url("assets/img/hero-herbs.jpg");
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+  animation:breathe 38s ease-in-out infinite alternate;will-change:transform}
+@keyframes breathe{from{transform:scale(1)}to{transform:scale(1.06)}}
+.hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(96deg,rgba(14,22,11,.9) 0%,rgba(14,22,11,.78) 32%,rgba(14,22,11,.44) 58%,rgba(14,22,11,.14) 82%,rgba(14,22,11,.06) 100%)}
+.hero-in{position:relative;z-index:3;padding-top:clamp(130px,15vw,180px);padding-bottom:clamp(120px,14vw,170px)}
+.hero-copy{max-width:46rem}
+.hero .eyebrow{color:var(--amber-lift)}
+.hero h1{color:#fff;margin-top:22px}
+.hero-lead{margin-top:24px;font-size:clamp(1.06rem,1.5vw,1.22rem);line-height:1.66;color:rgba(255,255,255,.84);max-width:46ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:14px 44px;margin:52px 0 0;padding:0;list-style:none}
+.hero-facts li{display:flex;flex-direction:column;gap:2px}
+.hero-facts b{font-family:var(--display);font-size:1.7rem;font-weight:700;color:#fff;line-height:1.1}
+.hero-facts span{font-size:13px;color:rgba(255,255,255,.64);letter-spacing:.01em}
+.hero-curve{position:absolute;left:0;right:0;bottom:-1px;z-index:4;width:100%;height:clamp(40px,5vw,80px);display:block}
+.hero-curve path{fill:var(--oat)}
+@media (max-width:820px){
+  .hero-veil{background:linear-gradient(180deg,rgba(14,22,11,.9) 0%,rgba(14,22,11,.74) 34%,rgba(14,22,11,.7) 62%,rgba(14,22,11,.86) 100%)}
+  .hero-in{padding-top:clamp(112px,20vw,150px);padding-bottom:clamp(96px,16vw,140px)}
+}
+@media (max-width:560px){
+  h1{font-size:2.15rem}
+  .hero .eyebrow{letter-spacing:.14em}
+  .hero-lead{font-size:1.02rem}
+  .hero-facts{gap:14px 26px;margin-top:40px}
+  .hero-facts b{font-size:1.45rem}
+  .hero-cta{gap:10px}
+  .hero-cta .btn{flex:1 1 auto;min-width:150px}
+}
+
+/* ---------- chapter opener ---------- */
+.opener{text-align:center;max-width:44rem;margin-inline:auto}
+.opener h2{margin-top:20px}
+.opener .lead{margin-top:24px}
+.opener .btn{margin-top:36px}
+
+/* ---------- practice ---------- */
+.split{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr);gap:clamp(36px,6vw,90px);align-items:center}
+@media (max-width:880px){.split{grid-template-columns:1fr;gap:38px}}
+.portrait{margin:0}
+.portrait img{border-radius:999px 999px 18px 18px;width:100%;max-width:330px}
+.portrait figcaption{font-size:14px;color:var(--muted);margin-top:20px;max-width:24rem}
+.prose h2{margin-top:18px}
+.prose p{color:var(--muted);max-width:56ch;margin-top:22px}
+.prose p strong{color:var(--ink);font-weight:600}
+.asks{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.asks li{font-family:var(--display);font-weight:500;font-size:1.06rem;color:var(--ink);padding:17px 0;border-bottom:1px solid var(--line)}
+
+/* ---------- the method: the dark chapter ---------- */
+.method-head{max-width:46rem}
+.method-head h2{margin-top:18px}
+.sec-dark .method-head h2{color:#fff}
+.method-head .lead{margin-top:22px}
+.ladder{margin-top:clamp(48px,6vw,84px);display:grid;gap:0}
+.rung{display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,4vw,56px);align-items:start;padding:clamp(28px,3.4vw,42px) 0;border-top:1px solid var(--line-dark)}
+.rung:last-child{border-bottom:1px solid var(--line-dark)}
+.rung .num{font-family:var(--display);font-size:2.4rem;font-weight:700;color:var(--amber-lift);line-height:.9;opacity:.9}
+.rung h3{color:#fff;font-size:clamp(1.3rem,2.1vw,1.7rem);font-weight:600}
+.rung p{color:rgba(237,235,226,.66);font-size:15.5px;line-height:1.62}
+@media (max-width:820px){.rung{grid-template-columns:64px 1fr;gap:18px}.rung p{grid-column:2}}
+
+/* ---------- what she helps with ---------- */
+.help{display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(28px,4vw,64px);margin-top:clamp(36px,4vw,56px)}
+@media (max-width:900px){.help{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:580px){.help{grid-template-columns:1fr}}
+.help-item{padding:26px 0;border-top:1px solid var(--line)}
+.help-item h3{font-size:1.08rem}
+.help-item p{font-size:15px;line-height:1.56;color:var(--muted);margin-top:7px}
+.help-foot{margin-top:44px;font-size:16px;color:var(--muted);max-width:52ch}
+.help-foot strong{color:var(--ink);font-weight:600}
+
+/* ---------- areas of work ---------- */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(36px,4vw,56px)}
+@media (max-width:940px){.work{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.work{grid-template-columns:1fr}}
+.work-card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:30px 28px 32px;display:flex;flex-direction:column;gap:12px;transition:transform .22s cubic-bezier(.2,.8,.3,1),box-shadow .22s}
+.work-card:hover{transform:translateY(-3px);box-shadow:0 20px 40px -32px rgba(31,36,25,.8)}
+.work-card .k{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+.work-card p{font-size:15px;line-height:1.58;color:var(--muted)}
+
+/* ---------- the day ---------- */
+.rail{margin-top:clamp(40px,5vw,64px);display:grid}
+.tick{display:grid;grid-template-columns:104px minmax(0,1fr);gap:clamp(20px,3vw,48px);align-items:start;padding:26px 0;border-top:1px solid var(--line);position:relative}
+.tick:last-child{border-bottom:1px solid var(--line)}
+.tick .t{font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--amber);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.tick h3{font-size:1.14rem}
+.tick p{font-size:15.5px;line-height:1.6;color:var(--muted);margin-top:7px;max-width:56ch}
+.rail-note{margin-top:26px;font-size:13.5px;color:var(--muted)}
+@media (max-width:640px){.tick{grid-template-columns:1fr;gap:6px}}
+
+/* ---------- the shelf ---------- */
+.shelf{position:relative;overflow:hidden;margin-top:clamp(40px,5vw,60px);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.track{display:flex;gap:20px;width:max-content;animation:roll 72s linear infinite;will-change:transform}
+.shelf:hover .track,.shelf:focus-within .track{animation-play-state:paused}
+@keyframes roll{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(-50% - 10px),0,0)}}
+.reel{flex:0 0 268px;display:flex;flex-direction:column;text-decoration:none;background:var(--cream);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .24s cubic-bezier(.2,.8,.3,1),box-shadow .24s}
+.reel:hover{transform:translateY(-6px);box-shadow:0 26px 50px -34px rgba(31,36,25,.85)}
+.reel-frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--amber-soft)}
+.reel-frame img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.3,1)}
+.reel:hover .reel-frame img{transform:scale(1.05)}
+.reel-body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.reel-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.reel-top h3{font-size:1.06rem}
+.reel-top .plays{font-family:var(--display);font-size:.95rem;font-weight:600;color:var(--amber);white-space:nowrap;font-variant-numeric:tabular-nums}
+.reel-body p{font-size:14.5px;line-height:1.52;color:var(--muted)}
+.reel-meta{margin-top:auto;padding-top:14px;font-size:12.5px;color:var(--muted);display:flex;gap:10px;font-variant-numeric:tabular-nums;border-top:1px solid var(--line)}
+.shelf-foot{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;justify-content:space-between;margin-top:26px;font-size:14px;color:var(--muted)}
+.shelf-foot a{color:var(--amber);font-weight:600;text-decoration:none}
+.shelf-foot a:hover{text-decoration:underline}
+
+/* ---------- myths ---------- */
+.myths{margin-top:clamp(36px,4vw,56px)}
+.myth{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(20px,4vw,64px);padding:34px 0;border-top:1px solid var(--line)}
+.myth:last-child{border-bottom:1px solid var(--line)}
+@media (max-width:800px){.myth{grid-template-columns:1fr;gap:14px}}
+.myth .k{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:12px}
+.myth .fact .k{color:var(--amber)}
+.myth .claim p{font-family:var(--display);font-size:clamp(1.2rem,1.9vw,1.5rem);font-weight:500;line-height:1.3;color:var(--ink)}
+.myth .fact p{font-size:16px;line-height:1.66;color:var(--muted)}
+
+/* ---------- philosophy ---------- */
+.saying{max-width:40rem;margin-inline:auto;text-align:center}
+.saying blockquote{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,4vw,3.1rem);line-height:1.14;letter-spacing:-.025em;color:#fff}
+.saying blockquote em{font-style:normal;color:var(--amber-lift)}
+.saying .who{margin-top:34px;font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,235,226,.55)}
+.saying .after{margin-top:26px;font-size:15.5px;line-height:1.7;color:rgba(237,235,226,.68)}
+
+/* ---------- consult ---------- */
+.consult{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(34px,5vw,80px);align-items:start}
+@media (max-width:880px){.consult{grid-template-columns:1fr}}
+.consult h2{margin-top:18px}
+.consult .lead{margin-top:22px;max-width:46ch}
+.lines{list-style:none;margin:38px 0 0;padding:0;border-top:1px solid var(--line)}
+.lines li{display:flex;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.lines .k{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);flex:0 0 96px}
+.lines .v{font-size:16px;font-weight:500;min-width:0;overflow-wrap:anywhere}
+.lines .v a{color:var(--amber);text-decoration:none}
+.lines .v a:hover{text-decoration:underline}
+.lines .soon{color:var(--muted);font-weight:400;font-style:italic}
+.card-note{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:30px 28px}
+.card-note h3{margin-bottom:12px}
+.card-note p{font-size:15px;line-height:1.66;color:var(--muted)}
+
+/* ---------- footer ---------- */
+footer{background:var(--bark);color:rgba(237,235,226,.62);padding:64px 0 56px;font-size:14px}
+.foot{display:flex;flex-wrap:wrap;gap:22px 40px;align-items:baseline;justify-content:space-between}
+.foot b{font-family:var(--display);font-weight:700;font-size:1.2rem;color:#fff;letter-spacing:-.02em}
+.foot .tag{font-size:13px;color:rgba(237,235,226,.5);margin-top:6px}
+.foot a{color:#fff;text-decoration:none;border-bottom:1px solid var(--amber);padding-bottom:2px}
+.fine{margin-top:44px;padding-top:26px;border-top:1px solid var(--line-dark);font-size:12.5px;line-height:1.7;max-width:76ch;color:rgba(237,235,226,.46)}
+
+/* ---------- scroll reveal ---------- */
+.r{opacity:1}
+.js .r{opacity:.001;transform:translate3d(0,16px,0);transition:opacity .85s cubic-bezier(.2,.8,.3,1),transform .85s cubic-bezier(.2,.8,.3,1)}
+.js .r.in{opacity:1;transform:none}
+.js .r.d1{transition-delay:.07s}.js .r.d2{transition-delay:.14s}.js .r.d3{transition-delay:.21s}
+
+
+/* ---------- reel lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:24px}
+.lb.open{display:flex}
+.lb-scrim{position:absolute;inset:0;background:rgba(18,24,15,.82);backdrop-filter:blur(6px)}
+.lb-panel{position:relative;z-index:1;width:min(420px,100%);max-height:calc(100vh - 48px);overflow:auto;background:var(--cream);border-radius:20px;padding:14px;box-shadow:0 40px 90px -40px rgba(0,0,0,.9)}
+.lb-close{position:absolute;top:-14px;right:-14px;z-index:2;width:40px;height:40px;border-radius:50%;border:none;background:var(--amber);color:#211502;font-size:20px;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 20px -8px rgba(0,0,0,.8)}
+.lb-close:hover{background:var(--amber-lift)}
+.lb-embed{min-height:200px;display:grid;place-items:center}
+.lb-embed iframe{border-radius:12px!important}
+.lb-fallback{display:none;text-align:center;padding:10px 14px 18px}
+.lb-fallback.show{display:block}
+.lb-fallback img{border-radius:14px;width:100%;margin-bottom:18px}
+.lb-fallback p{font-size:14.5px;color:var(--muted);margin-bottom:16px}
+.lb-load{font-size:13.5px;color:var(--muted);padding:40px 0}
+@media (max-width:560px){.lb{padding:16px}.lb-close{top:-10px;right:-6px}}
+
+/* phone overrides live here, after the rules they override */
+@media (max-width:560px){
+  .lines li{flex-direction:column;align-items:flex-start;gap:4px}
+  .lines .k{flex:0 0 auto}
+  .lines .v{font-size:15.5px}
+  .shelf-foot{gap:6px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+  .hero-photo{animation:none!important}
+  .js .r{opacity:1!important;transform:none!important}
+  .track{animation:none!important;width:auto}
+  .shelf{overflow-x:auto;mask-image:none;-webkit-mask-image:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <div class="nav-left">
+      <a href="#story">Story</a>
+      <a href="#method">Method</a>
+      <a href="#day">The day</a>
+      <a href="#watch">Watch</a>
+    </div>
+    <a class="wordmark" href="#top"><b>Dr. Nagakumari</b><span>Healing Homes</span></a>
+    <div class="nav-right">
+      <a class="btn-nav" href="#consult">Book<span class="nav-long"> a consultation</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-photo"></div>
+    <div class="hero-veil"></div>
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <span class="eyebrow">Naturopathy &middot; Nutrition &middot; Yogic Sciences</span>
+        <h1>Health is more than the absence of disease.</h1>
+        <p class="hero-lead">Twenty-seven years spent on the harder definition &mdash; a body and mind that work well, held up by what you eat, how you move, and how you rest.</p>
+        <div class="hero-cta">
+          <a class="btn btn-amber" href="#consult">Book a consultation</a>
+          <a class="btn btn-onphoto" href="#watch">Watch the reels</a>
+        </div>
+        <ul class="hero-facts">
+          <li><b>27</b><span>years in practice</span></li>
+          <li><b>3</b><span>disciplines, one plan</span></li>
+          <li><b>0</b><span>powders or pills sold</span></li>
+        </ul>
+      </div>
+    </div>
+    <svg class="hero-curve" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,80 L0,44 C220,4 480,0 720,18 C960,36 1200,58 1440,34 L1440,80 Z"></path>
+    </svg>
+  </section>
+
+  <section class="sec">
+    <div class="wrap opener">
+      <span class="eyebrow r">The promise</span>
+      <h2 class="r d1">Healing, in every home.</h2>
+      <p class="lead r d2">A house where somebody understands why the body is behaving the way it is &mdash; and knows the few small things that would settle it. No powders, no programme, no subscription. Just the knowledge, handed over.</p>
+      <a class="btn btn-ghost r d3" href="#story">Read her story</a>
+    </div>
+  </section>
+
+  <section class="sec sec-cream" id="story">
+    <div class="wrap split">
+      <figure class="portrait r">
+        <img src="assets/img/dr-nagakumari.jpg" alt="Dr. Nagakumari" width="320" height="320">
+        <figcaption>Dr. Nagakumari has practised Naturopathy, therapeutic nutrition and Yogic Sciences for over twenty-seven years.</figcaption>
+      </figure>
+      <div class="prose r d1">
+        <span class="eyebrow">Her story</span>
+        <h2>She reads the day, not just the symptom.</h2>
+        <p>For more than two decades her work has centred on one relationship: what food, movement, rest and mind do to the body's own processes. She draws on the traditional principles of Naturopathy and Yogic Sciences while staying close to current understanding of physiology and metabolism.</p>
+        <p>The approach starts with <strong>the individual, not the average</strong>. Rather than treating a symptom in isolation, a consultation works backwards through the lifestyle that produced it, and forwards into habits that can actually be kept.</p>
+        <ul class="asks">
+          <li>Why is the body responding this way?</li>
+          <li>What in the lifestyle is feeding it?</li>
+          <li>What does the body need to work better?</li>
+          <li>How do these habits survive past March?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-dark" id="method">
+    <div class="wrap">
+      <div class="method-head">
+        <span class="eyebrow r">The method</span>
+        <h2 class="r d1">Four steps, and the order matters.</h2>
+        <p class="lead r d2">Habits built before the lifestyle is corrected rarely survive the first fortnight. So the work runs in sequence, every time.</p>
+      </div>
+      <div class="ladder">
+        <article class="rung r">
+          <span class="num">01</span>
+          <h3>Understand the body</h3>
+          <p>What is it doing, and why. The symptom gets read as a signal rather than treated as the problem.</p>
+        </article>
+        <article class="rung r">
+          <span class="num">02</span>
+          <h3>Respect its needs</h3>
+          <p>Food, movement, rest, breath and light &mdash; given at the hours the body can actually use them.</p>
+        </article>
+        <article class="rung r">
+          <span class="num">03</span>
+          <h3>Correct the lifestyle</h3>
+          <p>Change the few things carrying the most weight, instead of overhauling everything at once.</p>
+        </article>
+        <article class="rung r">
+          <span class="num">04</span>
+          <h3>Build habits that hold</h3>
+          <p>Keep them past the novelty. A plan abandoned in March was never the right plan in January.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="method-head" style="max-width:44rem">
+        <span class="eyebrow r">What she helps with</span>
+        <h2 class="r d1" style="margin-top:18px">What people arrive with.</h2>
+      </div>
+      <div class="help">
+        <div class="help-item r"><h3>Stubborn weight</h3><p>A metabolism that slowed down despite eating less and moving more.</p></div>
+        <div class="help-item r"><h3>Bloating and digestion</h3><p>A gut that reacts differently to the same food on different days.</p></div>
+        <div class="help-item r"><h3>Sleep that will not come</h3><p>Lying awake with a nervous system still running on the day's adrenaline.</p></div>
+        <div class="help-item r"><h3>Night cravings</h3><p>Late eating that shows up in how the next morning feels.</p></div>
+        <div class="help-item r"><h3>The four o'clock crash</h3><p>An afternoon drop that coffee postpones rather than fixes.</p></div>
+        <div class="help-item r"><h3>Colds that keep returning</h3><p>Recovery that never quite finishes before the next one starts.</p></div>
+      </div>
+      <p class="help-foot r"><strong>Not on this list?</strong> Ask anyway. The first consultation starts with your day, not with a diagnosis.</p>
+    </div>
+  </section>
+
+  <section class="sec sec-cream">
+    <div class="wrap">
+      <div class="method-head" style="max-width:44rem">
+        <span class="eyebrow r">Areas of work</span>
+        <h2 class="r d1" style="margin-top:18px">Six things she is asked for.</h2>
+      </div>
+      <div class="work">
+        <article class="work-card r"><span class="k">Naturopathy</span><h3>Working with the body</h3><p>Lifestyle-based approaches built on the fundamentals &mdash; nutrition, hydration, movement, sleep, stress, breathing, time outdoors.</p></article>
+        <article class="work-card r"><span class="k">Nutrition</span><h3>Therapeutic nutrition</h3><p>Food as part of metabolism, digestion, energy and recovery rather than a calorie count. What, how much, when, and how it is prepared.</p></article>
+        <article class="work-card r"><span class="k">Yogic sciences</span><h3>Movement and breath</h3><p>Beyond posture: movement, breathing, relaxation and awareness folded into an ordinary day, without needing an hour you do not have.</p></article>
+        <article class="work-card r"><span class="k">Prevention</span><h3>Preventive wellness</h3><p>Routine, activity, sleep quality, recovery and stress load &mdash; examined long before any of it becomes a diagnosis.</p></article>
+        <article class="work-card r"><span class="k">Education</span><h3>Health literacy</h3><p>Complex physiology translated into language people can use, so a decision about dinner is informed rather than guessed.</p></article>
+        <article class="work-card r"><span class="k">Myth-busting</span><h3>Claim versus evidence</h3><p>Telling tradition, personal experience and marketing apart from what is actually supported &mdash; and saying so plainly.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="day">
+    <div class="wrap">
+      <div class="method-head" style="max-width:46rem">
+        <span class="eyebrow r">Dinacharya</span>
+        <h2 class="r d1" style="margin-top:18px">A day, the way the body wants it.</h2>
+        <p class="lead r d2" style="margin-top:22px">Most of what she teaches is not a new food. It is the same food at a different hour.</p>
+      </div>
+      <div class="rail">
+        <div class="tick r"><div class="t">06:00</div><div><h3>Surya Namaskar, six to twelve rounds</h3><p>Ten minutes carrying resistance, cardio, spinal decompression and breath work in one sequence &mdash; before the day has a chance to take them.</p></div></div>
+        <div class="tick r"><div class="t">08:00</div><div><h3>Eat what grows here</h3><p>Moringa over matcha, amla over goji, makhana over quinoa, jamun over blueberries. Local, seasonal, and a fraction of the price.</p></div></div>
+        <div class="tick r"><div class="t">13:00</div><div><h3>The largest meal of the day</h3><p>Midday is when the body is best equipped to handle a full plate. Warm, freshly cooked, eaten without a screen in hand.</p></div></div>
+        <div class="tick r"><div class="t">19:00</div><div><h3>Dinner finished</h3><p>Light and early. The gap between the last bite and sleep does more work than the contents of the plate.</p></div></div>
+        <div class="tick r"><div class="t">21:00</div><div><h3>Screens down, nothing strenuous</h3><p>The nervous system needs a runway. Intensity this late keeps cortisol up when it should be falling.</p></div></div>
+        <div class="tick r"><div class="t">22:00</div><div><h3>Asleep &mdash; or four rounds of 4-7-8 breathing</h3><p>Inhale four seconds, hold seven, exhale eight. Four cycles slow the heart rate and tell the body it is safe to let go.</p></div></div>
+      </div>
+      <p class="rail-note r">General guidance, not a prescription. A consultation adjusts all of it to your day.</p>
+    </div>
+  </section>
+
+  <section class="sec sec-cream" id="watch">
+    <div class="wrap">
+      <div class="method-head" style="max-width:44rem">
+        <span class="eyebrow r">Watch</span>
+        <h2 class="r d1" style="margin-top:18px">Two minutes each, nothing to buy.</h2>
+      </div>
+    </div>
+
+    <div class="shelf">
+      <div class="track" id="track">
+        <a class="reel" data-reel="https://www.instagram.com/reel/DY7leU7veKG/" href="https://www.instagram.com/reel/DY7leU7veKG/" target="_blank" rel="noopener noreferrer">
+          <div class="reel-frame"><img src="assets/reels/superfood-swaps.jpg" alt="Imported superfoods versus Indian superfoods" loading="lazy"></div>
+          <div class="reel-body"><div class="reel-top"><h3>Stop overpaying for Western superfoods</h3><span class="plays">5,581</span></div><p>Moringa over matcha, amla over goji, and why the marketing is the only imported part.</p><p class="reel-meta"><span>0:24</span><span>29 May 2026</span></p></div>
+        </a>
+        <a class="reel" data-reel="https://www.instagram.com/reel/DZdDe3NTAAL/" href="https://www.instagram.com/reel/DZdDe3NTAAL/" target="_blank" rel="noopener noreferrer">
+          <div class="reel-frame"><img src="assets/reels/surya-namaskar.jpg" alt="Surya Namaskar as a ten minute full-body practice" loading="lazy"></div>
+          <div class="reel-body"><div class="reel-top"><h3>Ditch the two-hour gym split</h3><span class="plays">5,558</span></div><p>Five metabolic benefits in one ten-minute sequence you can do on a balcony.</p><p class="reel-meta"><span>0:36</span><span>11 Jun 2026</span></p></div>
+        </a>
+        <a class="reel" data-reel="https://www.instagram.com/reel/DZF4ks7Pig-/" href="https://www.instagram.com/reel/DZF4ks7Pig-/" target="_blank" rel="noopener noreferrer">
+          <div class="reel-frame"><img src="assets/reels/simple-reset.jpg" alt="Jeera, Surya Namaskar, early dinner and sleep before ten" loading="lazy"></div>
+          <div class="reel-body"><div class="reel-top"><h3>The plan nobody is selling you</h3><span class="plays">3,290</span></div><p>Jeera, sun salutations, dinner before seven, asleep by ten. That is the whole thing.</p><p class="reel-meta"><span>0:28</span><span>2 Jun 2026</span></p></div>
+        </a>
+        <a class="reel" data-reel="https://www.instagram.com/reel/DbYGN8ATL-P/" href="https://www.instagram.com/reel/DbYGN8ATL-P/" target="_blank" rel="noopener noreferrer">
+          <div class="reel-frame"><img src="assets/reels/bloating.jpg" alt="Why bloating is not only about food" loading="lazy"></div>
+          <div class="reel-body"><div class="reel-top"><h3>Feeling bloated?</h3><span class="plays">1,284</span></div><p>Stress, hydration and sleep change digestion as much as the food on the plate does.</p><p class="reel-meta"><span>0:32</span><span>29 Jul 2026</span></p></div>
+        </a>
+        <a class="reel" data-reel="https://www.instagram.com/reel/DZ-jCOPTUtc/" href="https://www.instagram.com/reel/DZ-jCOPTUtc/" target="_blank" rel="noopener noreferrer">
+          <div class="reel-frame"><img src="assets/reels/night-habits.jpg" alt="Five habits to stop at night" loading="lazy"></div>
+          <div class="reel-body"><div class="reel-top"><h3>Five things to stop doing at night</h3><span class="plays">1,035</span></div><p>Late eating, screens, cold water and hard training, quietly undoing your metabolism.</p><p class="reel-meta"><span>0:28</span><span>24 Jun 2026</span></p></div>
+        </a>
+        <a class="reel" data-reel="https://www.instagram.com/reel/DZAtJNHT3HW/" href="https://www.instagram.com/reel/DZAtJNHT3HW/" target="_blank" rel="noopener noreferrer">
+          <div class="reel-frame"><img src="assets/reels/late-night-eating.jpg" alt="Why eating after ten at night backfires" loading="lazy"></div>
+          <div class="reel-body"><div class="reel-top"><h3>Stop eating after 10 PM</h3><span class="plays">878</span></div><p>Your pancreas has clocked out. A two-minute naturopathy hack for the craving.</p><p class="reel-meta"><span>0:29</span><span>31 May 2026</span></p></div>
+        </a>
+        <a class="reel" data-reel="https://www.instagram.com/reel/DZp7w-VBql1/" href="https://www.instagram.com/reel/DZp7w-VBql1/" target="_blank" rel="noopener noreferrer">
+          <div class="reel-frame"><img src="assets/reels/sleep-breathing.jpg" alt="The 4-7-8 breathing technique for sleep" loading="lazy"></div>
+          <div class="reel-body"><div class="reel-top"><h3>Insomnia, gone in sixty seconds</h3><span class="plays">778</span></div><p>The 4-7-8 breath: four cycles to pull the nervous system out of fight-or-flight.</p><p class="reel-meta"><span>0:30</span><span>16 Jun 2026</span></p></div>
+        </a>
+        <a class="reel" data-reel="https://www.instagram.com/reel/DbDEUufTHkU/" href="https://www.instagram.com/reel/DbDEUufTHkU/" target="_blank" rel="noopener noreferrer">
+          <div class="reel-frame"><img src="assets/reels/kashayam.jpg" alt="A kashayam for cold and cough" loading="lazy"></div>
+          <div class="reel-body"><div class="reel-top"><h3>Do not suppress every cough</h3><span class="plays">556</span></div><p>Ginger, tulsi, black pepper and coriander seed, twice a day, while you recover.</p><p class="reel-meta"><span>0:28</span><span>21 Jul 2026</span></p></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="shelf-foot">
+        <span>Covers and play counts from <a href="https://www.instagram.com/drnagakumari.healinghomes" target="_blank" rel="noopener noreferrer">@drnagakumari.healinghomes</a>, September 2026.</span>
+        <span>Hover to pause</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="myths">
+    <div class="wrap">
+      <div class="method-head" style="max-width:46rem">
+        <span class="eyebrow r">Myth or fact</span>
+        <h2 class="r d1" style="margin-top:18px">Health advice is everywhere. Not all of it is reliable.</h2>
+      </div>
+      <div class="myths">
+        <div class="myth r">
+          <div class="claim"><span class="k">Commonly said</span><p>Superfoods have to be imported.</p></div>
+          <div class="fact"><span class="k">What she teaches</span><p>Moringa carries more iron and vitamin C than matcha, with no caffeine crash. Amla is among the richest natural sources of vitamin C on earth. The marketing budget is imported; the nutrition is not.</p></div>
+        </div>
+        <div class="myth r">
+          <div class="claim"><span class="k">Commonly said</span><p>Bloating means you ate the wrong thing.</p></div>
+          <div class="fact"><span class="k">What she teaches</span><p>Stress, hydration, sleep and how fast you eat change digestion as much as the food does. Treating only the plate leaves most of the cause untouched.</p></div>
+        </div>
+        <div class="myth r">
+          <div class="claim"><span class="k">Commonly said</span><p>Real results need two hours in a gym.</p></div>
+          <div class="fact"><span class="k">What she teaches</span><p>Six to twelve rounds of Surya Namaskar deliver resistance work, cardiovascular load, deep stretch and breath regulation in one sequence &mdash; repeatable on a balcony, every morning.</p></div>
+        </div>
+        <div class="myth r">
+          <div class="claim"><span class="k">Commonly said</span><p>A snack at eleven is harmless.</p></div>
+          <div class="fact"><span class="k">What she teaches</span><p>The same food lands differently at 11 PM than at 7 PM. Digestion and insulin response are slowest at night, which is why late eating shows up in the next morning's glucose.</p></div>
+        </div>
+        <div class="myth r">
+          <div class="claim"><span class="k">Commonly said</span><p>Every cough should be suppressed.</p></div>
+          <div class="fact"><span class="k">What she teaches</span><p>Support the recovery instead &mdash; warm, light meals, and a kashayam of ginger, tulsi, black pepper and coriander seed twice a day &mdash; rather than silencing the signal.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-dark">
+    <div class="wrap saying">
+      <blockquote class="r">The body is not something to treat when it becomes <em>unwell</em>.</blockquote>
+      <p class="after r d1">It is something we learn to understand, nourish and care for every day &mdash; and where treatment is needed, decisions made responsibly, alongside qualified medical professionals.</p>
+      <p class="who r d2">Dr. Nagakumari</p>
+    </div>
+  </section>
+
+  <section class="sec sec-cream" id="consult">
+    <div class="wrap consult">
+      <div class="r">
+        <span class="eyebrow">Consultations</span>
+        <h2>Start with your ordinary day.</h2>
+        <p class="lead">A first consultation goes through what you eat, when you eat it, how you sleep, how you move and what your days demand of you &mdash; then works out the smallest set of changes you can actually keep.</p>
+        <ul class="lines">
+          <li><span class="k">Instagram</span><span class="v"><a href="https://www.instagram.com/drnagakumari.healinghomes" target="_blank" rel="noopener noreferrer">@drnagakumari.healinghomes</a></span></li>
+          <li><span class="k">Phone</span><span class="v"><span class="soon">to be added</span></span></li>
+          <li><span class="k">Email</span><span class="v"><span class="soon">to be added</span></span></li>
+          <li><span class="k">Format</span><span class="v">One to one, by appointment</span></li>
+        </ul>
+      </div>
+      <div class="card-note r d1">
+        <h3>Before you book</h3>
+        <p>Naturopathy, nutrition and yoga guidance works alongside medical care, not instead of it. If you are under treatment for a diagnosed condition, are pregnant, or take prescribed medication, bring that to the consultation and keep your treating doctor in the loop. Nothing here replaces a qualified medical opinion.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <b>Dr. Nagakumari</b>
+          <div class="tag">Recreating health. Busting myths. One person at a time.</div>
+        </div>
+        <div><a href="https://www.instagram.com/drnagakumari.healinghomes" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+      </div>
+      <p class="fine">The information on this site is educational and general in nature. It is not a diagnosis, a prescription, or a substitute for advice from a qualified medical professional. Reel covers and play counts are drawn from the public Instagram account @drnagakumari.healinghomes.</p>
+    </div>
+  </footer>
+
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Reel player">
+  <div class="lb-scrim" data-close></div>
+  <div class="lb-panel">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <div class="lb-embed" id="lbEmbed"><p class="lb-load">Loading the reel&hellip;</p></div>
+    <div class="lb-fallback" id="lbFallback">
+      <img id="lbCover" src="" alt="">
+      <p>Instagram could not load the player here.</p>
+      <a class="btn btn-amber" id="lbOpen" href="#" target="_blank" rel="noopener noreferrer">Open on Instagram</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.documentElement.classList.add("js");
+(function(){
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* navbar frosts once the photograph has scrolled by */
+  var nav = document.getElementById("nav");
+  var hero = document.querySelector(".hero");
+  if (nav && hero) {
+    var sync = function () {
+      nav.classList.toggle("frosted", hero.getBoundingClientRect().bottom <= nav.offsetHeight + 4);
+    };
+    sync();
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+  }
+
+  /* loop the shelf without a seam */
+  var track = document.getElementById("track");
+  if (track) {
+    var copy = track.cloneNode(true);
+    while (copy.firstElementChild) {
+      var node = copy.firstElementChild;
+      node.setAttribute("aria-hidden", "true");
+      node.setAttribute("tabindex", "-1");
+      track.appendChild(node);
+    }
+  }
+
+
+  /* reels play in place; Instagram's own player, loaded on demand */
+  var lb = document.getElementById("lb"), lbEmbed = document.getElementById("lbEmbed"),
+      lbFallback = document.getElementById("lbFallback"), lbCover = document.getElementById("lbCover"),
+      lbOpen = document.getElementById("lbOpen"), lbClose = document.getElementById("lbClose");
+  if (lb) {
+    var lastFocus = null, timer = null, scriptAdded = false;
+
+    var loadScript = function (cb) {
+      if (window.instgrm) return cb();
+      if (!scriptAdded) {
+        scriptAdded = true;
+        var sc = document.createElement("script");
+        sc.async = true;
+        sc.src = "https://www.instagram.com/embed.js";
+        document.body.appendChild(sc);
+      }
+      var tries = 0;
+      var poll = setInterval(function () {
+        if (window.instgrm) { clearInterval(poll); cb(); }
+        else if (++tries > 40) { clearInterval(poll); cb(); }
+      }, 100);
+    };
+
+    var close = function () {
+      lb.classList.remove("open");
+      document.body.style.overflow = "";
+      lbEmbed.innerHTML = '<p class="lb-load">Loading the reel&hellip;</p>';
+      lbFallback.classList.remove("show");
+      clearTimeout(timer);
+      if (lastFocus) lastFocus.focus();
+    };
+
+    var open = function (url, cover, title) {
+      lastFocus = document.activeElement;
+      lbOpen.href = url;
+      lbCover.src = cover || "";
+      lbCover.alt = title || "";
+      lbFallback.classList.remove("show");
+      lbEmbed.innerHTML = '<p class="lb-load">Loading the reel&hellip;</p>';
+      lb.classList.add("open");
+      document.body.style.overflow = "hidden";
+      lbClose.focus();
+
+      loadScript(function () {
+        lbEmbed.innerHTML = '<blockquote class="instagram-media" data-instgrm-permalink="' +
+          url + '?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;width:100%;min-width:260px"></blockquote>';
+        if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
+      });
+
+      /* if the player never appears, hand over the cover and a link */
+      timer = setTimeout(function () {
+        if (!lbEmbed.querySelector("iframe")) {
+          lbEmbed.innerHTML = "";
+          lbFallback.classList.add("show");
+        }
+      }, 3500);
+    };
+
+    document.addEventListener("click", function (e) {
+      var card = e.target.closest ? e.target.closest("[data-reel]") : null;
+      if (!card) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+      var img = card.querySelector("img");
+      var h = card.querySelector("h3");
+      open(card.getAttribute("data-reel"), img ? img.getAttribute("src") : "", h ? h.textContent : "");
+    });
+    lb.addEventListener("click", function (e) { if (e.target.hasAttribute("data-close")) close(); });
+    lbClose.addEventListener("click", close);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && lb.classList.contains("open")) close(); });
+  }
+
+  /* sections settle in as they arrive */
+  var items = [].slice.call(document.querySelectorAll(".r"));
+  var showAll = function () { items.forEach(function (el) { el.classList.add("in"); }); };
+  if (reduced || !("IntersectionObserver" in window)) { showAll(); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add("in"); io.unobserve(entry.target); }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: .05 });
+  items.forEach(function (el) { io.observe(el); });
+  setTimeout(showAll, 2500);
+})();
+</script>
+</body>
+</html>
